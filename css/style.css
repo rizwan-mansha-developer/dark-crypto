@@ -262,19 +262,18 @@
 /*** Navbar End ***/
 
 /* start text-container  */
+
 .text-container {
   margin-top: 100px;
-  height: 900px;
+  height: auto;
   width: full;
   background: linear-gradient(to right, #23584a, #121222);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 .text-container .box-content {
-  
   display: flex;
   justify-items: center;
   align-items: center;
@@ -283,7 +282,191 @@
   padding-bottom: 50px;
 }
 
+/*start making suggestions  */
+.suggestion-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.suggestion {
+  background-color: #e7e7e7;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.suggestion:hover {
+  background-color: #d1d1d1;
+}
+
+/* ended making suggestions  */
+
+/*start change now  */
+.change-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  margin-top: 12px;
+}
+
+.change-button:hover {
+  background-color: #3e8e41;
+}
+
+.change-button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+/* end change now  */
+
+/* Start bad and good  */
+.main-text {
+  font-size: 2em;
+  font-weight: bolder;
+  font-size: 40px;
+  color: white;
+}
+
+.line-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.line {
+  text-align: left;
+  margin: 0 20px; /* Adjust the value to increase/decrease the gap */
+}
+
+.title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  margin: 5px 0;
+  color: white;
+}
+
+.highlighted {
+  font-size: 1.3em;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.dot {
+  width: 5px; /* Diameter of the circle */
+  height: 5px; /* Diameter of the circle */
+  background-color: white; /* Color of the circle */
+  border-radius: 50%; /* Makes the shape circular */
+  display: inline-block; /* Ensures the circle behaves as an inline element */
+  margin-right: 5px;
+}
+
+.underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid;
+  border-radius: 50% 50% 0 0;
+  animation: underline-anim 2s ease forwards;
+}
+
+.evil {
+  color: red;
+}
+
+.good {
+  color: blue;
+}
+
+.underline.evil {
+  border-color: red;
+}
+
+.underline.good {
+  border-color: blue;
+}
+
+@keyframes underline-anim {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* ended bad and good  */
+
+.rotate {
+  transform: rotate(355deg);
+  display: inline-block; /* Ensures the transform works correctly */
+  font-size: 35px;
+  font-weight: 500;
+  color: white;
+}
+.curved-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.curved-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px; /* Adjust based on the curve's desired position */
+  left: 0;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(230, 215, 17) 50%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 0 0;
+  transform: scaleX(0);
+  transform-origin: bottom center;
+  animation: underline-anim 2s ease forwards;
+}
+
+@keyframes underline-anim {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 /* ended text-container  */
+
+/* start course include  */
+
+/* ended courses include  */
 
 /*** Carousel Hero Header Start ***/
 .header-carousel .header-carousel-item {
@@ -372,7 +555,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)),
-    url(../img/bg-breadcrumb.jpg);
+    url(../assets/img/bg-breadcrumb.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
